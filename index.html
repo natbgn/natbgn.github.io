@@ -18,13 +18,24 @@
 @-o-viewport        { width: device-width; }
 @viewport           { width: device-width; }
 
+/* :root {
+  --primary-color:           #4A2C2A;
+  --secondary-color:         #9e8778;
+  --background-color:        #4d555e;
+  --header-background-color: #EEE;
+  --notification-color:      #DA680F;
+  --border-color:            #CCC;
+  --font-color:              #363636;
+} */
+
 :root {
-  --primary-color:  #4d555e;    // #4A2C2A;
-  --secondary-color: #799915;     // #9e8778;
-  --background-color:  #4d555e;   // #4d555e;
-  --notification-color: #BA2C45;  // #DA680F;
-  --border-color: #939393;        // #CCC;
-  --font-color: #363636;          // #363636;
+  --primary-color:          #4d555e;
+  --secondary-color:        #799915;
+  --background-color:       #4d555e;
+  --header-background-color:#EEE;
+  --notification-color:     #BA2C45;
+  --border-color:           #939393; 
+  --font-color:             #363636; 
 }
 
 body {
@@ -151,6 +162,10 @@ blockquote {
   padding-bottom: 0;
 }
 
+#summary {
+  margin-left: 13px;
+}
+
 #awards,
 #education {
   margin-top: 20px;
@@ -205,26 +220,24 @@ blockquote {
 #education .description {
   width: 83%;
   display: inline-block;
-  background: #eee;
+  background: var(--header-background-color, #eee);
   margin-bottom: 10px;
   position: relative;
   padding: 10px;
-  border-bottom: 1px solid var(--border-color, #ccc);
-  border-right: 1px solid var(--border-color, #ccc);
 }
 
 #awards .description:after,
 #education .description:after {
   content: '';
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 0;
-  left: -16px;
+  left: -30px;
   height: 0;
   width: 0;
   border: solid transparent;
-  border-right-color: #eee;
-  border-width: 8px;
+  border-right-color: var(--header-background-color, #eee);
+  border-width: 15px;
   pointer-events: none;
 }
 
@@ -251,7 +264,7 @@ blockquote {
   width: 95%;
   padding: 10px;
   margin-bottom: 10px;
-  background: #eee;
+  background: var(--header-background-color, #eee);
   border-bottom: 1px solid var(--border-color, #ccc);
   border-right: 1px solid var(--border-color, #ccc);
 }
@@ -316,7 +329,7 @@ blockquote {
   border-right: 1px solid var(--border-color, #ccc);
   border-bottom: 1px solid var(--border-color, #ccc);
   color: var(--primary-color,#32475c);
-  background: #eee;
+  background: var(--header-background-color, #eee);
 }
 
 .contact-item .title {
@@ -366,7 +379,7 @@ blockquote {
 }
 
 .skill-level {
-  background-color: var(--border-color,#227c74);
+  background-color: var(--notification-color,#227c74);
   border-radius: 4px;
   color: #fff;
   padding: 1px 8px;
@@ -377,11 +390,15 @@ blockquote {
 }
 
 .box #languages {
-  margin-top: 0px; //-25px;
+  margin-top: 0px;
+}
+
+.box li.language-list.list-group-item {
+  margin-left: 15px;
 }
 
 #language-skills .skill {
-  margin: 10px 0;
+  margin: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
@@ -527,7 +544,7 @@ blockquote,
                 <img src="https:&#x2F;&#x2F;lh3.googleusercontent.com&#x2F;pw&#x2F;ACtC-3c-K7RyXdTq7nUcQMblfS3ezkxsq8dbk1bHrUJ6jKvT4p6JPcXCCx4X2AAGyfwWlxmOBxOHRwfPYIZNm2woWsIrOnPhVFq0AJURJgRS-TY2E3PPdhDpTk-ZXsksUOgFWrDokZxJn_d_BK4xAU8wY-iLDQ&#x3D;w873-h953-no" alt="avatar">
               </div>
             <div id="text-header" >
-              <h1>Nathalie Borgognon<br><span>Software Engineer | UX&#x2F;UI designer</span></h1>
+              <h1>Nathalie Borgognon<br><span>Software Engineer | UX designer | Educational technologist</span></h1>
             </div>
           </div>
         </div>
@@ -539,7 +556,7 @@ blockquote,
             </h2>
               <div class="contact-item">
                 <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
-                  <div class="title pull-right">Moosgasse, 12, CP 154</div>
+                  <div class="title pull-right">CP 154</div>
                 <div class="title  pull-right">
                     CH-3232
                   Ins,
@@ -586,7 +603,7 @@ blockquote,
               <h2><i class="fa fa-user ico"></i>
                   About
               </h2>
-              <p>Unicorn Engineer passionate about the digitalization of processes and human activities through technological projects.<br><br>- Graduate of a Bachelor's degree in software engineering (UAS) and a master's degree in Technological Education (University).<br>- Involved in multidisciplinary digital projects with partners from different horizons for more than 15 years.<br>- Three-tier programming architecture for HR, banking, medical applications; stand-alone civil engineering application and educational game; research HCI mobile application.</p>
+              <p id="summary">Multitalented Engineer passionate about the digitalization of processes and human activities through technological projects.<br><br>- Graduate of a Bachelor's degree in software engineering (UAS), a pre-master's degree in Computer Sciences (University) and a master's degree in Technological Education (University).<br>- Involved in multidisciplinary digital projects with partners from different horizons for more than 15 years.<br>- Three-tier programming architecture for HR, banking, medical robot applications; stand-alone civil engineering application and educational game; research HCI mobile application.</p>
             </div>
             <!-- WORK EXPERIENCE -->
             <div class="box">
@@ -600,7 +617,7 @@ blockquote,
                         <div class="address">
                           <a href="https:&#x2F;&#x2F;www.techwan.com&#x2F;" target="_blank"><i class="fa fa-globe ico"></i> https:&#x2F;&#x2F;www.techwan.com&#x2F;</a>
                         </div>
-                      <div class="year">January 2020 – Present</div>
+                      <div class="year">January 2020 – February 2021</div>
                     </div>
                   </div>
                   <div class="row">
@@ -608,6 +625,12 @@ blockquote,
                       <div class="profession">Quality and Project Manager</div>
                       <div class="description">
                         - Analysis of company's practices in terms of software quality<br>- Elaboration of a common action plan for continuous internal improvements<br>- Organisational facilitation and introduction to some Lean and Agile practices<br>- Implementation and documentation of internal changes<br>- Lifecycle Management applied for customers
+                          <div class="highlights">
+                              Highlights
+                          </div>
+                          <ul class="list-group">
+                              <li class="list-group-item">Change management in fields of cross-functional internal communication, software engineering best practices and test automation</li>
+                          </ul>
                       </div>
                     </div>
                   </div>
@@ -627,6 +650,12 @@ blockquote,
                       <div class="profession">Training Coordinator</div>
                       <div class="description">
                         - Analysis of company's practices in terms of training<br>- Definition of a master plan for the implementation of the Digital Learning Center<br>- Co-writing of the macro pedagogical scenarios of all customer training courses<br>- Elaboration of customer training catalogs
+                          <div class="highlights">
+                              Highlights
+                          </div>
+                          <ul class="list-group">
+                              <li class="list-group-item">Release of six training catalogs, for each corporate trade skill at Hannover Messe 2019</li>
+                          </ul>
                       </div>
                     </div>
                   </div>
@@ -643,9 +672,9 @@ blockquote,
                   </div>
                   <div class="row">
                     <div class="job-details col-xs-11">
-                      <div class="profession">Research and Teaching Student Assistant | FTC</div>
+                      <div class="profession">Research and Teaching Student Assistant | Fixed-term contract</div>
                       <div class="description">
-                        - Teaching and assistance to students in Human-Computer Interaction and Ergonomics<br>- Development of a tablet game for learning sounds in Unity 3D-C#<br>- Development of a research HCI mobile application in Ionic-JavaScript
+                        - Teaching and assistance to students in Human-Computer Interaction and Ergonomics during three semesters<br>- Development of a tablet game for learning sounds in Unity 3D-C#<br>- Development of a research HCI mobile application in Ionic-JavaScript
                       </div>
                     </div>
                   </div>
@@ -681,9 +710,15 @@ blockquote,
                   </div>
                   <div class="row">
                     <div class="job-details col-xs-11">
-                      <div class="profession">Research and Teaching Student Assistant | FTC</div>
+                      <div class="profession">Research and Teaching Student Assistant | Fixed-term contract</div>
                       <div class="description">
                         - Teaching and assistance for the two semester course: Software Engineering & Robotics Project<br>- Writing of course materials Robotics Project & Robotics Discovery Workshop
+                          <div class="highlights">
+                              Highlights
+                          </div>
+                          <ul class="list-group">
+                              <li class="list-group-item">Proposal of the educational robots e-puck from EPFL and implementation of a programming training course</li>
+                          </ul>
                       </div>
                     </div>
                   </div>
@@ -700,9 +735,15 @@ blockquote,
                   </div>
                   <div class="row">
                     <div class="job-details col-xs-11">
-                      <div class="profession">Software engineer | FTC</div>
+                      <div class="profession">Software engineer | Fixed-term contract</div>
                       <div class="description">
                         - Development of a robot controller simulator in C# with Corba communications
+                          <div class="highlights">
+                              Highlights
+                          </div>
+                          <ul class="list-group">
+                              <li class="list-group-item">European research project PICO participation in computer aided surgery field</li>
+                          </ul>
                       </div>
                     </div>
                   </div>
@@ -719,9 +760,15 @@ blockquote,
                   </div>
                   <div class="row">
                     <div class="job-details col-xs-11">
-                      <div class="profession">Software developer | FTC</div>
+                      <div class="profession">Software developer | Fixed-term contract</div>
                       <div class="description">
                         - Development of a "CRM Mobility" prototype in J2ME on PDA with Web Services<br>- Migration and maintenance of automated test scripting to QuickTest Professional<br>- Writing of a recommendation guide on scripting tests in VBS
+                          <div class="highlights">
+                              Highlights
+                          </div>
+                          <ul class="list-group">
+                              <li class="list-group-item">Bachelor's thesis work realized as working for the company</li>
+                          </ul>
                       </div>
                     </div>
                   </div>
@@ -738,7 +785,7 @@ blockquote,
                   </div>
                   <div class="row">
                     <div class="job-details col-xs-11">
-                      <div class="profession">Software developer | FTC</div>
+                      <div class="profession">Software developer | Fixed-term contract</div>
                       <div class="description">
                         - Maintenance of distributed ASP-Oracle/SQL Server & Access applications<br>- Writing maintenance recommendations for distributed Access applications
                       </div>
@@ -748,29 +795,13 @@ blockquote,
                 <div class="job clearfix">
                   <div class="row">
                     <div class="details">
-                      <div class="where">Elan IT &amp; Ajilon Sàrl</div>
-                      <div class="year">May 2002 – February 2003</div>
+                      <div class="where">Elan IT | Ajilon Sàrl | Providentia | ALSO</div>
+                      <div class="year">August 1997 – February 2003</div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="job-details col-xs-11">
-                      <div class="profession">1st &amp; 2nd Level IT-Support | FTT</div>
-                      <div class="description">
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="job clearfix">
-                  <div class="row">
-                    <div class="details">
-                      <div class="where">Providentia &amp; ALSO</div>
-                      <div class="year">August 1997 – March 2002</div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="job-details col-xs-11">
-                      <div class="profession">Webpublisher</div>
+                      <div class="profession">1st &amp; 2nd Level IT-Support | Webpublisher &amp; Trainer | Fixed-term contracts</div>
                       <div class="description">
                         
                       </div>
@@ -793,16 +824,16 @@ blockquote,
                   <div class="col-sm-12 clearfix">
                       <span class="skill badge">Java, C#, C++, VBS</span>
                       <span class="skill badge">JavaScript ES6, HTML5, CSS</span>
-                      <span class="skill badge">XML, SQL, Oracle, MS SQL</span>
+                      <span class="skill badge">XML, SQL, Oracle, MS SQL Server, MySQL</span>
                       <span class="skill badge">Web Services, Corba</span>
                       <span class="skill badge">EclipseLink, Eclipse RCP</span>
                       <span class="skill badge">Unity 3D</span>
                       <span class="skill badge">Ionic</span>
-                      <span class="skill badge">TDD, Unit-functional-E2E automation tests</span>
+                      <span class="skill badge">TDD, Unit-functional-E2E automation tests, QuickTest Professional</span>
                       <span class="skill badge">eXtreme Programming (XP)</span>
                       <span class="skill badge">GOF Design Patterns</span>
                       <span class="skill badge">Ant, Makefile</span>
-                      <span class="skill badge">GIT, SVN</span>
+                      <span class="skill badge">GIT, SVN, VSS</span>
                   </div>
                 </div>
                 <div class="skills clearfix">
@@ -845,48 +876,6 @@ blockquote,
                   </div>
                 </div>
             </div>
-            <!-- CERTIFICATIONS -->
-            <div class="box">
-              <h2><i class="fa fa-certificate ico"></i>
-                  Certifications
-              </h2>
-              <ul id="education" class="clearfix">
-                  <li>
-                    <div class="year center">(expected) 2022
-                        <br>2021
-                    </div>
-                    <div class="description pull-right">
-                      <h3>Interaction Design Foundation</h3>
-                        <p><i class="fa fa-graduation-cap ico"></i> Certification</p>
-                      <p>UX&#x2F;UI Design</p>
-                        <div>
-                            Courses
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">User Experience Design, UX management, Gestalt Psychology</li>
-                            <li class="list-group-item">Human Computer Interaction, UI Design, Information Visualization</li>
-                        </ul>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="year center">(expected) 2022
-                        <br>2020
-                    </div>
-                    <div class="description pull-right">
-                      <h3>Schule für Gestaltung Bern&#x2F;Biel (School of Visual Arts)</h3>
-                        <p><i class="fa fa-graduation-cap ico"></i> Certification</p>
-                      <p>Graphic design - Professional Media Publisher</p>
-                        <div>
-                            Courses
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Typography, Colors, Layout, Publishing for analog and digital media</li>
-                            <li class="list-group-item">InDesign, Illustrator, Photoshop</li>
-                        </ul>
-                    </div>
-                  </li>
-              </ul>
-            </div>
             <!-- EDUCATION -->
             <div class="box">
               <h2><i class="fa fa-university ico"></i>
@@ -894,50 +883,153 @@ blockquote,
               </h2>
               <ul id="education" class="clearfix">
                   <li>
-                    <div class="year center">2020 
-                    <br>2015</div>
+                    <div class="year center">
+                        2020
+                        <br>
+                      2015
+                    </div>
                     <div class="description pull-right">
                       <h3>University of Geneva</h3>
                         <p><i class="fa fa-graduation-cap ico"></i> Master of Science in Learning and Teaching Technologies</p>
-                      <p>Faculty of Psychology and Educational Sciences</p>
+                      <p>Faculty of Psychology and Educational Sciences | Blended-learning education</p>
                         <div>
-                            Courses
+                            Courses / Highlights
                         </div>
                         <ul class="list-group">
-                            <li class="list-group-item">Development of interactive web applications, e-learning modules and education game application</li>
-                            <li class="list-group-item">User-centered design, Design Thinking, Research and User test methods, Ergonomics of IHM</li>
-                            <li class="list-group-item">Master's thesis: implementation of user-centered design, research and user test methods for an education interactive device</li>
+                            <li class="list-group-item"><b>Master's thesis</b>: <a href='https://prezi.com/view/JTRiAKe0FNE0yF3AGRRl/'>Implementation of user-centered design, research and testing methods in interactive educational devices development</a></li>
                         </ul>
                     </div>
                   </li>
                   <li>
-                    <div class="year center">2009 
-                    <br>2007</div>
+                    <div class="year center">
+                        2009
+                        <br>
+                      2007
+                    </div>
                     <div class="description pull-right">
                       <h3>University of Fribourg</h3>
                         <p><i class="fa fa-graduation-cap ico"></i> Pre-Master of Science in Computer Science</p>
                       <p>Department of Informatics (DIUF)</p>
+                        <div>
+                            Courses / Highlights
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">60 ECTS gateway between UAS and University</li>
+                        </ul>
                     </div>
                   </li>
                   <li>
-                    <div class="year center">2006 
-                    <br>2000</div>
+                    <div class="year center">
+                        2005
+                        <br>
+                      2000
+                    </div>
                     <div class="description pull-right">
                       <h3>School of Management and Engineering Vaud (HEIG-VD)</h3>
                         <p><i class="fa fa-graduation-cap ico"></i> Bachelor of Science in Software Engineering</p>
-                      <p>Computer Science and Engineering | Evening classes</p>
+                      <p>Computer Science and Engineering | Evening education</p>
+                        <div>
+                            Courses / Highlights
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><b>Bachelor's thesis</b>: <a href='https://tb.heig-vd.ch/2131'>Mobile application in J2ME for bank advisors client interviews</a></li>
+                            <li class="list-group-item"><b>SETEVIA Award</b> for merit, hard work and determination | awarded to the most deserving student of 2005 school year</li>
+                        </ul>
                     </div>
                   </li>
                   <li>
-                    <div class="year center"> 
-                    <br>2000</div>
+                    <div class="year center">
+                      2000
+                    </div>
                     <div class="description pull-right">
                       <h3>School of Management and Engineering Vaud (HEIG-VD)</h3>
                         <p><i class="fa fa-graduation-cap ico"></i> Pre-Bachelor of Science in Software Engineering</p>
-                      <p>Computer Science and Engineering | Evening classes</p>
+                      <p>Computer Science and Engineering | Evening education</p>
+                        <div>
+                            Courses / Highlights
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Bachelor's degree entrance exam preparation</li>
+                        </ul>
                     </div>
                   </li>
               </ul>
+            </div>
+            <!-- CERTIFICATIONS CONDITIONAL AFTER EDUCATION -->
+            <div class="box">
+              <h2><i class="fa fa-certificate ico"></i>
+                  Certifications
+              </h2>
+              <ul id="education" class="clearfix">
+                  <li>
+                    <div class="year center">
+                          (expected) 2022
+                          <br>
+                        2021
+                    </div>
+                    <div class="description pull-right">
+                      <h3>Interaction Design Foundation</h3>
+                        <p><i class="fa fa-graduation-cap ico"></i> Certification</p>
+                      <p>UX&#x2F;UI Design</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="year center">
+                          (expected) 2022
+                          <br>
+                        2020
+                    </div>
+                    <div class="description pull-right">
+                      <h3>Schule für Gestaltung Bern&#x2F;Biel (School of Visual Arts)</h3>
+                        <p><i class="fa fa-graduation-cap ico"></i> Certification</p>
+                      <p>Graphic design - Professional Media Publisher</p>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+            <!-- VOLUNTEER CONDITIONNAL RIGHT-->
+            <div class="box">
+              <h2><i class="fa fa-group ico"></i>
+                  Volunteer
+              </h2>
+                <div class="job clearfix">
+                  <div class="row">
+                    <div class="details">
+                      <div class="where">HC Université Neuchâtel</div>
+                      <div class="year">October 2017 – August 2019</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="job-details col-xs-11">
+                      <div class="profession">J+S ice hockey instructor | Responsible for the ice hockey school</div>
+                      <div class="description">
+                        - Introduce children aged 4 to 8 to ice hockey<br>- Teach basic techniques and tactics
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="job clearfix">
+                  <div class="row">
+                    <div class="details">
+                      <div class="where">At3flo - Fab Lab</div>
+                      <div class="year">December 2015 – Present</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="job-details col-xs-11">
+                      <div class="profession">President</div>
+                      <div class="description">
+                        - Digital manufacturing project and participation in external events
+                          <div class="highlights">
+                              Highlights
+                          </div>
+                          <ul class="list-group">
+                              <li class="list-group-item"><a href='https://http://edutechwiki.unige.ch/fr/EduTech_Wiki:Livres/D%C3%A9coupe_laser_dans_l%27%C3%A9ducation'>Co-edition of an open e-book: Laser cutting in education</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <!-- LANGUAGES CONDITIONNAL RIGHT-->
             <div class="box">
@@ -945,11 +1037,11 @@ blockquote,
                   Languages
               </h2>
               <ul class="list-group">
-                  <li class=" list-group-item">French - C2<span class="skill badge pull-right">Native</span></li>
-                  <li class=" list-group-item">German - B2<span class="skill badge pull-right">Professional working proficiency</span></li>
-                  <li class=" list-group-item">English - B2<span class="skill badge pull-right">Professional working proficiency</span></li>
-                  <li class=" list-group-item">Spanish - A2<span class="skill badge pull-right">Elementary proficiency</span></li>
-                  <li class=" list-group-item">Italian - A1<span class="skill badge pull-right">Elementary proficiency</span></li>
+                  <li class="language-list list-group-item">French - C2<span class="skill badge pull-right">Native</span></li>
+                  <li class="language-list list-group-item">German - B2<span class="skill badge pull-right">Professional working proficiency</span></li>
+                  <li class="language-list list-group-item">English - B1<span class="skill badge pull-right">Professional working proficiency</span></li>
+                  <li class="language-list list-group-item">Spanish - A2<span class="skill badge pull-right">Elementary proficiency</span></li>
+                  <li class="language-list list-group-item">Italian - A1<span class="skill badge pull-right">Elementary proficiency</span></li>
               </ul>
             </div>
         </div>
